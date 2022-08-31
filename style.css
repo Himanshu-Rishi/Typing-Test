@@ -1,0 +1,374 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    /* HSL color mode */
+    --first-color: #EE6983;
+    --first-color-second: #FFF5E4;
+    --first-color-alt: #FFC4C4;
+    --first-color-lighter: ##FFC4C4;
+    --title-color: black;
+    --text-color: black;
+    --text-color-light: darkgray;
+    --body-color: #cfd2cf52;
+    --container-color: #fff;
+
+
+    /*========== Font and typography ==========*/
+
+
+    --body-font: 'Poppins', sans-serif;
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+
+    /*========== Font weight ==========*/
+
+    --font-thin: 100;
+    --font-medium: 400;
+    --font-semi-bold: 600;
+
+
+    /*========== Margenes Bottom ==========*/
+
+
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+
+    /*========== z index ==========*/
+
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== Button Dark/Light ==========*/
+
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* ============================Main CSS================================ */
+/* header section */
+.nav-item
+{
+    padding:  var(--mb-0-25) var(--mb-3);
+
+}
+
+.nav-item .nav-link
+{
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: var(--font-medium);
+}
+
+.nav-item  a:hover
+{
+    color: black;
+}
+
+/* main section */
+.main
+{
+    display: flex;
+    /* align-items: center; */
+    background-image: url(/images/main-bg.png);
+    background-size: cover;
+}
+
+.typing-img img
+{
+    padding-left: var(--mb-1-5);
+    width: 50vw;
+  height: 90vh;
+}
+.main .content
+{
+    width: 100vh;
+    height: 90vh;
+    
+}
+.main .content .title
+{
+    font-size: 5rem;
+    font-weight: var(--font-semi-bold);
+    display: inline-block;
+    margin-top: 40%;
+    margin-left: 5.8rem;
+    animation-delay: 0.5s;
+}
+.main .content .sub__title
+{
+    animation-delay: 1s;
+    padding-top: var(--mb-0-25);
+    font-size: var(--mb-2);
+    font-weight: var(--font-thin);
+    margin-left: 5.8rem;
+}
+
+.logo
+{
+    height: 60px;
+    width: 180px;
+    margin-left: var(--mb-2);
+}
+
+.anim
+{
+    opacity: 0;
+    transform: translateY(100px);
+    animation: moveup 0.5s linear forwards;
+}
+@keyframes moveup
+{
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* text section */
+
+::selection{
+color: #fff;
+background: var(--first-color);
+}
+.test
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.test .wrapper{
+width: 770px;
+padding: 35px;
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+.wrapper .input-field{
+opacity: 0;
+z-index: -999;
+position: absolute;
+}
+.wrapper .content-box{
+padding: 13px 20px 0;
+border-radius: 10px;
+border: 1px solid #bfbfbf;
+}
+.content-box .typing-text{
+overflow: hidden;
+max-height: 256px;
+}
+.typing-text::-webkit-scrollbar{
+width: 0;
+}
+.typing-text p{
+font-size: 21px;
+text-align: justify;
+letter-spacing: 1px;
+word-break: break-all;
+}
+.typing-text span.correct
+{
+    color: #56964f;
+}
+.typing-text p span{
+position: relative;
+}
+.typing-text p span.incorrect{
+color: #cb3439;
+outline: 1px solid #fff;
+background: #ffc0cb;
+border-radius: 4px;
+}
+.typing-text p span.active{
+color: #17A2B8;
+}
+.typing-text p span.active::before{
+position: absolute;
+content: "";
+height: 2px;
+width: 100%;
+bottom: 0;
+left: 0;
+opacity: 0;
+border-radius: 5px;
+background: #17A2B8;
+animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+50%{ 
+    opacity: 1; 
+}
+}
+.content-box .content{
+margin-top: 17px;
+display: flex;
+padding: 12px 0;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+border-top: 1px solid #bfbfbf;
+}
+.content button{
+outline: none;
+border: none;
+width: 105px;
+color: #fff;
+padding: 8px 0;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+background: var(--first-color);
+transition: transform 0.3s ease;
+}
+.content button:active{
+transform: scale(0.97);
+}
+.content .result-details{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+width: calc(100% - 140px);
+justify-content: space-between;
+}
+.result-details li{
+display: flex;
+height: 20px;
+list-style: none;
+position: relative;
+}
+.result-details li:not(:first-child){
+padding-left: 22px;
+border-left: 1px solid #bfbfbf;
+}
+.result-details li p{
+font-size: 19px;
+}
+.result-details li span{
+display: block;
+font-size: 20px;
+}
+li span b{
+font-weight: 500;
+}
+li:not(:first-child) span{
+font-weight: 500;
+}
+@media (max-width: 745px) {
+.wrapper{
+    padding: 20px;
+}
+.content-box .content{
+    padding: 20px 0;
+}
+.content-box .typing-text{
+    max-height: 100%;
+}
+.typing-text p{
+    font-size: 19px;
+    text-align: left;
+}
+.content button{
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.content .result-details{
+    width: 100%;
+}
+.result-details li:not(:first-child){
+    border-left: 0;
+    padding: 0;
+}
+.result-details li p, 
+.result-details li span{
+    font-size: 17px;
+}
+}
+@media (max-width: 518px) {
+.wrapper .content-box{
+    padding: 10px 15px 0;
+}
+.typing-text p{
+    font-size: 18px;
+}
+.result-details li{
+    margin-bottom: 10px;
+}
+.content button{
+    margin-top: 10px;
+}
+}
+
+/* footer section */
+footer p
+{
+    color: grey;
+    text-align: center;
+}
